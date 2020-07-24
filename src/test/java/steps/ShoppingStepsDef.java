@@ -14,5 +14,9 @@ public class ShoppingStepsDef implements En {
 
         Then("I should have {int} in my wallet", (Integer finalBudget) ->
                 Assert.assertEquals(budget, finalBudget.intValue()));
+
+        When("I buy {int} {word} with {int}", (Integer numberOfItems, String product, Integer price) -> {
+            budget -= (numberOfItems*price);
+        });
     }
 }
